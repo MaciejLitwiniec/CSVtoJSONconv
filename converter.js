@@ -18,7 +18,7 @@ fs.access(csvFilePath, fs.F_OK, (err) => {
     csvToJson()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
-            console.log(jsonObj);
+            //console.log(jsonObj);
             /* JSON Object is parsed into String with 2 more arguments: 
             null (means no replacement) and 4 spaces as indentation
             It helped to style .json file from unformatted to typical JSON style */
@@ -26,9 +26,9 @@ fs.access(csvFilePath, fs.F_OK, (err) => {
             /* parsed json is written to message.json file. In case of error message will be displayed
             tested with existing and deleted */
             fs.writeFileSync("message.json", json, 'utf8', (error) => {
-                if (error) return console.error(error)
-                console.log("Writing to file is done!");
+                if (error) return console.error(error);
             });
+            console.log("\nWriting to file is done!");
     });
 
 });
